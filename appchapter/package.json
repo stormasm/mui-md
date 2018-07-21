@@ -1,6 +1,6 @@
 {
-  "name": "react-router-tabs",
-  "description": "React router tabs",
+  "name": "appchapter",
+  "description": "simple mui menus",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

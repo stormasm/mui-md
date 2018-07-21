@@ -7,7 +7,7 @@ import Typography from "@material-ui/core/Typography";
 import MenuItem from "@material-ui/core/MenuItem";
 import Menu from "@material-ui/core/Menu";
 import { Route, Link } from "react-router-dom";
-import Picker from "./Picker";
+// import Picker from "./Picker";
 
 const styles = {
   root: {
@@ -64,16 +64,11 @@ class ShowTheLocation extends React.Component {
 class MenuAppBar extends React.Component {
   constructor(props) {
     super(props);
-    this.handleChange = this.handleChange.bind(this);
     this.state = {
       anchorEl: null,
       selectedKey: "ch1"
     };
 
-  }
-
-  handleChange(keychange) {
-    this.setState({ selectedKey: keychange });
   }
 
   handleMenu = event => {
@@ -156,14 +151,6 @@ class MenuAppBar extends React.Component {
             </div>
           </Toolbar>
         </AppBar>
-
-        <div>
-          <Picker
-            value={selectedKey}
-            onChange={this.handleChange}
-            options={["ch1", "ch2"]}
-          />
-        </div>
 
         <div>
           <Route exact path="/" component={Home} />

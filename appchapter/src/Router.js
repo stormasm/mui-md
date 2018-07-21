@@ -1,8 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, withRouter } from "react-router-dom";
 
-//import Nav from "./AppTab";
-//import Nav from "./AppMenu";
 import Nav from "./AppChapter";
 const MyNav = withRouter(Nav);
 
