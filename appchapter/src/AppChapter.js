@@ -7,7 +7,6 @@ import Typography from "@material-ui/core/Typography";
 import MenuItem from "@material-ui/core/MenuItem";
 import Menu from "@material-ui/core/Menu";
 import { Route, Link } from "react-router-dom";
-// import Picker from "./Picker";
 
 const styles = {
   root: {
@@ -31,11 +30,19 @@ const Home = () => (
   </div>
 );
 
+/*
 const GetParamsFromMatch = match => {
   const url = match.url;
   let result = url.split("/");
   let ary = [result[1], result[2]];
   return ary;
+};
+*/
+
+const GetParamsFromMatch = match => {
+  const url = match.url;
+  console.log(url);
+  return url;
 };
 
 // A simple component that shows the pathname of the current location
@@ -54,8 +61,7 @@ class ShowTheLocation extends React.Component {
 
     return (
       <div>
-        <h3>Chapter: {result[0]}</h3>
-        <h4>Section: {result[1]}</h4>
+        <h4>Section: {result}</h4>
       </div>
     );
   }
@@ -66,7 +72,6 @@ class MenuAppBar extends React.Component {
     super(props);
     this.state = {
       anchorEl: null,
-      selectedKey: "ch1"
     };
 
   }
@@ -81,7 +86,7 @@ class MenuAppBar extends React.Component {
 
   render() {
     const { classes } = this.props;
-    const { anchorEl, selectedKey } = this.state;
+    const { anchorEl } = this.state;
     const open = Boolean(anchorEl);
 
     return (
@@ -126,7 +131,7 @@ class MenuAppBar extends React.Component {
                 <MenuItem onClick={this.handleClose}>
                   <Link
                     className={classes.link}
-                    to={{ pathname: `/${selectedKey}/sec1` }}
+                    to={{ pathname: 'sec1' }}
                   >
                     Sec 1
                   </Link>
@@ -134,7 +139,7 @@ class MenuAppBar extends React.Component {
                 <MenuItem onClick={this.handleClose}>
                   <Link
                     className={classes.link}
-                    to={{ pathname: `/${selectedKey}/sec2` }}
+                    to={{ pathname: 'sec2' }}
                   >
                     Sec 2
                   </Link>
@@ -142,7 +147,7 @@ class MenuAppBar extends React.Component {
                 <MenuItem onClick={this.handleClose}>
                   <Link
                     className={classes.link}
-                    to={{ pathname: `/${selectedKey}/sec3` }}
+                    to={{ pathname: 'sec3' }}
                   >
                     Sec 3
                   </Link>
@@ -154,9 +159,9 @@ class MenuAppBar extends React.Component {
 
         <div>
           <Route exact path="/" component={Home} />
-          <Route path={`/${selectedKey}/sec1`} component={ShowTheLocation} />
-          <Route path={`/${selectedKey}/sec2`} component={ShowTheLocation} />
-          <Route path={`/${selectedKey}/sec3`} component={ShowTheLocation} />
+          <Route path={'/sec1'} component={ShowTheLocation} />
+          <Route path={'/sec2'} component={ShowTheLocation} />
+          <Route path={'/sec3'} component={ShowTheLocation} />
         </div>
       </div>
     );
