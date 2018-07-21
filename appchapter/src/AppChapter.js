@@ -30,33 +30,20 @@ const Home = () => (
   </div>
 );
 
-/*
 const GetParamsFromMatch = match => {
   const url = match.url;
   let result = url.split("/");
-  let ary = [result[1], result[2]];
-  return ary;
-};
-*/
-
-const GetParamsFromMatch = match => {
-  const url = match.url;
-  console.log(url);
-  return url;
+  return result[1];
 };
 
 // A simple component that shows the pathname of the current location
 class ShowTheLocation extends React.Component {
-
   render() {
     // leave next line here just to show what props
     // from the react-router are actually available
     // const { match, location, history } = this.props
 
-    console.log("ShowTheLocation");
-
     const { match } = this.props;
-
     const result = GetParamsFromMatch(match);
 
     return (
@@ -71,9 +58,8 @@ class MenuAppBar extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      anchorEl: null,
+      anchorEl: null
     };
-
   }
 
   handleMenu = event => {
@@ -129,26 +115,17 @@ class MenuAppBar extends React.Component {
                   </Link>
                 </MenuItem>
                 <MenuItem onClick={this.handleClose}>
-                  <Link
-                    className={classes.link}
-                    to={{ pathname: 'sec1' }}
-                  >
+                  <Link className={classes.link} to={{ pathname: "sec1" }}>
                     Sec 1
                   </Link>
                 </MenuItem>
                 <MenuItem onClick={this.handleClose}>
-                  <Link
-                    className={classes.link}
-                    to={{ pathname: 'sec2' }}
-                  >
+                  <Link className={classes.link} to={{ pathname: "sec2" }}>
                     Sec 2
                   </Link>
                 </MenuItem>
                 <MenuItem onClick={this.handleClose}>
-                  <Link
-                    className={classes.link}
-                    to={{ pathname: 'sec3' }}
-                  >
+                  <Link className={classes.link} to={{ pathname: "sec3" }}>
                     Sec 3
                   </Link>
                 </MenuItem>
@@ -159,9 +136,9 @@ class MenuAppBar extends React.Component {
 
         <div>
           <Route exact path="/" component={Home} />
-          <Route path={'/sec1'} component={ShowTheLocation} />
-          <Route path={'/sec2'} component={ShowTheLocation} />
-          <Route path={'/sec3'} component={ShowTheLocation} />
+          <Route path={"/sec1"} component={ShowTheLocation} />
+          <Route path={"/sec2"} component={ShowTheLocation} />
+          <Route path={"/sec3"} component={ShowTheLocation} />
         </div>
       </div>
     );
