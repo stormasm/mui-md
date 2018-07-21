@@ -1,5 +1,11 @@
 
 
+#### appchapter
+
+Start out with
+[react-router-menus3](https://github.com/stormtracks/react-router-mui/tree/master/react-router-menus3)
+and remove the Picker functionality.
+
 #### md1
 
 Start out with
