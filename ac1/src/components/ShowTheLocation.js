@@ -1,17 +1,19 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import KeyContainer from "./../containers/KeyContainer";
 import DataViewWrapper from "./../containers/DataViewWrapper";
 
 const GetParamsFromMatch = match => {
   const url = match.url;
   let result = url.split("/");
-  let ary = [result[1], result[2]];
+
+  console.log('Getparamsfrommatch = ', result)
+
+  let ary = result[1];
   return ary;
 };
 
-const GetRepoFromPathname = pathname => {
+const GetSectionFromPathname = pathname => {
   let result = pathname.split("/");
   return result[1];
 };
@@ -29,8 +31,12 @@ class ShowTheLocation extends React.Component {
     const p1 = nextProps.location.pathname;
     const p2 = this.props.location.pathname;
 
-    const repo1 = GetRepoFromPathname(p1);
-    const repo2 = GetRepoFromPathname(p2);
+    //console.log(p1 + ' ' + p2);
+
+    const repo1 = GetSectionFromPathname(p1);
+    const repo2 = GetSectionFromPathname(p2);
+
+    //console.log(repo1 + ' ' + repo2);
 
     const result = repo1.localeCompare(repo2);
 
@@ -49,13 +55,12 @@ class ShowTheLocation extends React.Component {
 
     const result = GetParamsFromMatch(match);
 
+    console.log(result);
+
     return (
       <div>
         <div>
-          <KeyContainer />
-        </div>
-        <div>
-          <DataViewWrapper repo={result[0]} view={result[1]} />
+          <DataViewWrapper view={result} />
         </div>
       </div>
     );

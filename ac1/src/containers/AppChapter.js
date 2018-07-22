@@ -7,6 +7,7 @@ import Typography from "@material-ui/core/Typography";
 import MenuItem from "@material-ui/core/MenuItem";
 import Menu from "@material-ui/core/Menu";
 import { Route, Link } from "react-router-dom";
+import ShowTheLocation from "./../components/ShowTheLocation";
 
 const styles = {
   root: {
@@ -36,6 +37,7 @@ const GetParamsFromMatch = match => {
   return result[1];
 };
 
+/*
 // A simple component that shows the pathname of the current location
 class ShowTheLocation extends React.Component {
   render() {
@@ -53,6 +55,7 @@ class ShowTheLocation extends React.Component {
     );
   }
 }
+*/
 
 class MenuAppBar extends React.Component {
   constructor(props) {
@@ -115,18 +118,18 @@ class MenuAppBar extends React.Component {
                   </Link>
                 </MenuItem>
                 <MenuItem onClick={this.handleClose}>
-                  <Link className={classes.link} to={{ pathname: "sec1" }}>
-                    Sec 1
+                  <Link className={classes.link} to={{ pathname: "view1" }}>
+                    View 1
                   </Link>
                 </MenuItem>
                 <MenuItem onClick={this.handleClose}>
-                  <Link className={classes.link} to={{ pathname: "sec2" }}>
-                    Sec 2
+                  <Link className={classes.link} to={{ pathname: "view2" }}>
+                    View 2
                   </Link>
                 </MenuItem>
                 <MenuItem onClick={this.handleClose}>
-                  <Link className={classes.link} to={{ pathname: "sec3" }}>
-                    Sec 3
+                  <Link className={classes.link} to={{ pathname: "view3" }}>
+                    View 3
                   </Link>
                 </MenuItem>
               </Menu>
@@ -136,9 +139,9 @@ class MenuAppBar extends React.Component {
 
         <div>
           <Route exact path="/" component={Home} />
-          <Route path={"/sec1"} component={ShowTheLocation} />
-          <Route path={"/sec2"} component={ShowTheLocation} />
-          <Route path={"/sec3"} component={ShowTheLocation} />
+          <Route path={"/view1"} component={ShowTheLocation} />
+          <Route path={"/view2"} component={ShowTheLocation} />
+          <Route path={"/view3"} component={ShowTheLocation} />
         </div>
       </div>
     );
