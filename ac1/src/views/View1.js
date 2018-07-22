@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
-import lightGreen from "@material-ui/core/colors/lightGreen";
+//import lightGreen from "@material-ui/core/colors/lightGreen";
 import RepoView from "./../components/RepoView";
 
 const styles = theme => ({

@@ -19,7 +19,7 @@ class DataViewWrapper extends React.Component {
   componentWillReceiveProps(nextProps) {
 
     // Do NOT Delete for awhile --- helpful for debugging...
-
+/*
     const locationChanged = nextProps.location !== this.props.location;
     console.log("componentWillUpdate");
     console.log("locationChanged: ", locationChanged);
@@ -27,7 +27,7 @@ class DataViewWrapper extends React.Component {
     console.log(nextProps.match.params.repo);
     console.log(nextProps.match.params.view);
     //console.log(repoMap[nextProps.match.params.repo]);
-
+*/
 
     this.setState({ isLoading: true });
     this.setState({ viewName: nextProps.view });
@@ -47,7 +47,7 @@ class DataViewWrapper extends React.Component {
       return <p>Loading ...</p>;
     }
 */
-    console.log('ok');
+    //console.log('ok');
 
     return (
       <div>

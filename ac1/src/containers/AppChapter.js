@@ -31,11 +31,13 @@ const Home = () => (
   </div>
 );
 
+/*
 const GetParamsFromMatch = match => {
   const url = match.url;
   let result = url.split("/");
   return result[1];
 };
+*/
 
 /*
 // A simple component that shows the pathname of the current location

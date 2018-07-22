@@ -7,7 +7,7 @@ const GetParamsFromMatch = match => {
   const url = match.url;
   let result = url.split("/");
 
-  console.log('Getparamsfrommatch = ', result)
+  // console.log('Getparamsfrommatch = ', result)
 
   let ary = result[1];
   return ary;
@@ -55,7 +55,7 @@ class ShowTheLocation extends React.Component {
 
     const result = GetParamsFromMatch(match);
 
-    console.log(result);
+    // console.log(result);
 
     return (
       <div>

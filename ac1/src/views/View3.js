@@ -18,21 +18,21 @@ const styles = theme => ({
   }
 });
 
-function View2(props) {
+function View3(props) {
   const { classes, viewName } = props;
 
   return (
     <div>
       <RepoView viewName={viewName} />
       <div className={classes.root}>
-        View2
+        View3
       </div>
     </div>
   );
 }
 
-View2.propTypes = {
+View3.propTypes = {
   viewName: PropTypes.string.isRequired
 };
 
-export default withStyles(styles)(View2);
+export default withStyles(styles)(View3);
