@@ -8,6 +8,7 @@ import MenuItem from "@material-ui/core/MenuItem";
 import Menu from "@material-ui/core/Menu";
 import { Route, Link } from "react-router-dom";
 import ShowTheLocation from "./../components/ShowTheLocation";
+import Home from "./../components/Home";
 
 const styles = {
   root: {
@@ -25,38 +26,12 @@ const styles = {
   }
 };
 
+/*
 const Home = () => (
   <div>
     <h2>Home</h2>
   </div>
 );
-
-/*
-const GetParamsFromMatch = match => {
-  const url = match.url;
-  let result = url.split("/");
-  return result[1];
-};
-*/
-
-/*
-// A simple component that shows the pathname of the current location
-class ShowTheLocation extends React.Component {
-  render() {
-    // leave next line here just to show what props
-    // from the react-router are actually available
-    // const { match, location, history } = this.props
-
-    const { match } = this.props;
-    const result = GetParamsFromMatch(match);
-
-    return (
-      <div>
-        <h4>Section: {result}</h4>
-      </div>
-    );
-  }
-}
 */
 
 class MenuAppBar extends React.Component {

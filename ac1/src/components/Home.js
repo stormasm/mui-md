@@ -2,32 +2,6 @@ import React from "react";
 import { withStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 
-/*
-const styles = {
-  root: {
-    minHeight: 50,
-    width: '100%',
-  }
-};
-*/
-
-/*
-const styles = {
-  root: {
-    display: 'flex',
-    justifyContent: 'center',
-    flexWrap: 'wrap',
-  },
-};
-
-
-const styles = {
-  root: {
-    flex: '1 1 100%',
-    justifyContent: 'center',
-  },
-};
-*/
 const styles = theme => ({
   root: theme.mixins.gutters({
     paddingTop: 20,
