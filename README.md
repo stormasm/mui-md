@@ -1,5 +1,5 @@
 
-Bootstrap this repo with the
+Bootstraped this repo with the
 [mui-view](https://github.com/stormasm/mui-view) starter kit.
 
 * **md1** is an example of the code working without doing the remote fetch of the file.
