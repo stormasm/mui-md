@@ -36,32 +36,12 @@ const SOURCE_CODE_ROOT_URL = 'https://github.com/mui-org/material-ui/tree/master
 function MarkdownDocs(props, context) {
   const { classes, demos, markdown } = props;
   const contents = getContents(markdown);
-  const headers = getHeaders(markdown);
-
-  const section = 'lab';
 
   return (
     <AppContent className={classes.root}>
       {contents.map((content, index) => {
         return <MarkdownElement className={classes.markdownElement} key={content} text={content} />;
       })}
-      {headers.components.length > 0 ? (
-        <MarkdownElement
-          className={classes.markdownElement}
-          text={`
-## API
-
-${headers.components
-            .map(
-              component =>
-                `- [&lt;${component} /&gt;](${section === 'lab' ? '/lab/api' : '/api'}/${kebabCase(
-                  component,
-                )})`,
-            )
-            .join('\n')}
-          `}
-        />
-      ) : null}
     </AppContent>
   );
 }
