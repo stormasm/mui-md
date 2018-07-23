@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
 import ViewName from "./../components/ViewName";
+import ReactMarkdown from "react-markdown";
 
 const styles = theme => ({
   root: {
@@ -19,11 +20,14 @@ const styles = theme => ({
 
 function View1(props) {
   const { classes, viewName } = props;
+  const input = '# This is a header\n\nAnd this is a paragraph\n\nUsing [react-markdown](https://github.com/rexxars/react-markdown)'
 
   return (
     <div>
       <ViewName viewName={viewName} />
-      <div className={classes.root}>View1</div>
+      <div className={classes.root}>
+        <ReactMarkdown source={input} />
+      </div>
     </div>
   );
 }
