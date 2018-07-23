@@ -42,7 +42,7 @@ function MarkdownDocs(props, context) {
 
 MarkdownDocs.propTypes = {
   classes: PropTypes.object.isRequired,
-  markdown: PropTypes.string.isRequired,
+  markdown: PropTypes.string.isRequired
 };
 
 export default withStyles(styles)(MarkdownDocs);
