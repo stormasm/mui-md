@@ -1,8 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
-//import lightGreen from "@material-ui/core/colors/lightGreen";
-import RepoView from "./../components/RepoView";
+import ViewName from "./../components/ViewName";
 
 const styles = theme => ({
   root: {
@@ -23,10 +22,8 @@ function View2(props) {
 
   return (
     <div>
-      <RepoView viewName={viewName} />
-      <div className={classes.root}>
-        View2
-      </div>
+      <ViewName viewName={viewName} />
+      <div className={classes.root}>View2</div>
     </div>
   );
 }

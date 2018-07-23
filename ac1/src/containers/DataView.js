@@ -9,9 +9,7 @@ function DataView(props) {
   const { tileData, repoName, viewName } = props;
 
   if (viewName === "view1") {
-    return (
-      <View1 viewName={viewName} />
-    );
+    return <View1 viewName={viewName} />;
   }
 
   if (viewName === "view2") {

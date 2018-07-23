@@ -37,9 +37,7 @@ class DataViewWrapper extends React.Component {
 
     return (
       <div>
-        <DataView
-          viewName={this.state.viewName}
-        />
+        <DataView viewName={this.state.viewName} />
       </div>
     );
   }
