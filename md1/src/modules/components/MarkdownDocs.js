@@ -1,12 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
-//import kebabCase from 'lodash/kebabCase';
-//import warning from 'warning';
 import { withStyles } from "@material-ui/core/styles";
-//import Button from '@material-ui/core/Button';
 import MarkdownElement from "@material-ui/docs/MarkdownElement";
 import AppContent from "./AppContent";
-
 import { getContents } from "./../utils/parseMarkdown";
 
 const styles = theme => ({
@@ -46,11 +42,7 @@ function MarkdownDocs(props, context) {
 
 MarkdownDocs.propTypes = {
   classes: PropTypes.object.isRequired,
-  demos: PropTypes.object,
   markdown: PropTypes.string.isRequired,
-  // You can define the direction location of the markdown file.
-  // Otherwise, we try to determine it with an heuristic.
-  markdownLocation: PropTypes.string
 };
 
 export default withStyles(styles)(MarkdownDocs);
