@@ -1,46 +1,44 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import kebabCase from 'lodash/kebabCase';
-import warning from 'warning';
-import { withStyles } from '@material-ui/core/styles';
-import Button from '@material-ui/core/Button';
-import MarkdownElement from '@material-ui/docs/MarkdownElement';
-import AppContent from './AppContent';
+import React from "react";
+import PropTypes from "prop-types";
+//import kebabCase from 'lodash/kebabCase';
+//import warning from 'warning';
+import { withStyles } from "@material-ui/core/styles";
+//import Button from '@material-ui/core/Button';
+import MarkdownElement from "@material-ui/docs/MarkdownElement";
+import AppContent from "./AppContent";
 
-import {
-  getHeaders,
-  getContents,
-  getTitle,
-  getDescription,
-} from './../utils/parseMarkdown';
+import { getContents } from "./../utils/parseMarkdown";
 
 const styles = theme => ({
   root: {
-    marginBottom: 100,
+    marginBottom: 100
   },
   header: {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'flex-end',
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "flex-end"
   },
   markdownElement: {
     marginTop: theme.spacing.unit * 2,
     marginBottom: theme.spacing.unit * 2,
-    padding: `0 ${theme.spacing.unit}px`,
-  },
+    padding: `0 ${theme.spacing.unit}px`
+  }
 });
 
-const demoRegexp = /^"demo": "(.*)"/;
-const SOURCE_CODE_ROOT_URL = 'https://github.com/mui-org/material-ui/tree/master';
-
 function MarkdownDocs(props, context) {
-  const { classes, demos, markdown } = props;
+  const { classes, markdown } = props;
   const contents = getContents(markdown);
 
   return (
     <AppContent className={classes.root}>
       {contents.map((content, index) => {
-        return <MarkdownElement className={classes.markdownElement} key={content} text={content} />;
+        return (
+          <MarkdownElement
+            className={classes.markdownElement}
+            key={content}
+            text={content}
+          />
+        );
       })}
     </AppContent>
   );
@@ -52,7 +50,7 @@ MarkdownDocs.propTypes = {
   markdown: PropTypes.string.isRequired,
   // You can define the direction location of the markdown file.
   // Otherwise, we try to determine it with an heuristic.
-  markdownLocation: PropTypes.string,
+  markdownLocation: PropTypes.string
 };
 
 export default withStyles(styles)(MarkdownDocs);
