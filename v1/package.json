@@ -1,6 +1,6 @@
 {
-  "name": "appchapter",
-  "description": "simple mui menus",
+  "name": "mui-view",
+  "description": "Starter for mui view infrastructure",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
