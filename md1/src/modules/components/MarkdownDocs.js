@@ -6,7 +6,7 @@ import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import MarkdownElement from '@material-ui/docs/MarkdownElement';
 import Head from 'docs/src/modules/components/Head';
-import AppContent from 'docs/src/modules/components/AppContent';
+import AppContent from './AppContent';
 import Demo from 'docs/src/modules/components/Demo';
 import Carbon from 'docs/src/modules/components/Carbon';
 import {

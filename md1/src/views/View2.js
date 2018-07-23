@@ -2,6 +2,8 @@ import React from "react";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
 import ViewName from "./../components/ViewName";
+import MarkdownDocs from './../modules/components/MarkdownDocs';
+import markdown from './../markdown/view2.md'
 
 const styles = theme => ({
   root: {
@@ -23,7 +25,9 @@ function View2(props) {
   return (
     <div>
       <ViewName viewName={viewName} />
-      <div className={classes.root}>View2</div>
+      <div className={classes.root}>
+        <MarkdownDocs markdown={markdown} />
+      </div>
     </div>
   );
 }
