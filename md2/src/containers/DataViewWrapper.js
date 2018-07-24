@@ -29,7 +29,7 @@ class DataViewWrapper extends React.Component {
     fetch(url)
       .then(response => {
         if (response.ok) {
-          return response;
+          return response.text();
         } else {
           throw new Error(
             "Sorry, something went wrong in the DataViewWrapper part I"
@@ -50,7 +50,7 @@ class DataViewWrapper extends React.Component {
     fetch(url)
       .then(response => {
         if (response.ok) {
-          return response;
+          return response.text();
         } else {
           throw new Error(
             "Sorry, something went wrong in the DataViewWrapper part II"
@@ -62,7 +62,16 @@ class DataViewWrapper extends React.Component {
   }
 
   render() {
-    console.log(this.state.data);
+
+    const mydata = this.state.data;
+    const mytype = typeof mydata
+
+    console.log('hhhhhhhh');
+    console.log(mytype);
+
+    if(mytype === 'string') {
+      console.log(mydata);
+    }
 
     if (this.state.error) {
       return <p>{this.state.error.message}</p>;
@@ -72,14 +81,21 @@ class DataViewWrapper extends React.Component {
       return <p>Loading ...</p>;
     }
 
+    if (mytype === 'string') {
     return (
       <div>
         <DataView
           viewName={this.state.viewName}
-          markdown={"#### cool, now get the real data"}
+          markdown={mydata}
         />
       </div>
     );
+    }
+    else {
+      return (
+        'No data yet...'
+      )
+    }
   }
 }
 
