@@ -6,23 +6,22 @@ import View2 from "./../views/View2";
 import View3 from "./../views/View3";
 
 function DataView(props) {
-  const { tileData, repoName, viewName } = props;
+  const { viewName, markdown } = props;
 
   if (viewName === "view1") {
     return <View1 viewName={viewName} />;
   }
 
   if (viewName === "view2") {
-    return (
-      <View2 tileData={tileData} repoName={repoName} viewName={viewName} />
-    );
+    return <View2 viewName={viewName} markdown={markdown} />;
   }
 
   return <View3 viewName={viewName} />;
 }
 
 DataView.propTypes = {
-  viewName: PropTypes.string.isRequired
+  viewName: PropTypes.string.isRequired,
+  markdown: PropTypes.string.isRequired
 };
 
 export default DataView;
