@@ -2,34 +2,33 @@ import React from "react";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
 import ViewName from "./../components/ViewName";
+import MarkdownDocs from "./../modules/components/MarkdownDocs";
 
 const styles = theme => ({
-  root: {
-    display: "flex",
-    flexWrap: "wrap",
-    justifyContent: "space-around",
-    overflow: "hidden",
-    height: 250,
-    backgroundColor: theme.palette.background.paper
-  },
-  subheader: {
-    width: "100%"
-  }
+  root: theme.mixins.gutters({
+    paddingTop: 20,
+    flex: "1 1 100%",
+    maxWidth: "100%",
+    margin: "0 auto"
+  })
 });
 
 function View3(props) {
-  const { classes, viewName } = props;
+  const { classes, viewName, markdown } = props;
 
   return (
     <div>
       <ViewName viewName={viewName} />
-      <div className={classes.root}>View3</div>
+      <div className={classes.root}>
+        <MarkdownDocs markdown={markdown} />
+      </div>
     </div>
   );
 }
 
 View3.propTypes = {
-  viewName: PropTypes.string.isRequired
+  viewName: PropTypes.string.isRequired,
+  markdown: PropTypes.string.isRequired
 };
 
 export default withStyles(styles)(View3);

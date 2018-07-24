@@ -5,35 +5,30 @@ import ViewName from "./../components/ViewName";
 import ReactMarkdown from "react-markdown";
 
 const styles = theme => ({
-  root: {
-    display: "flex",
-    flexWrap: "wrap",
-    justifyContent: "space-around",
-    overflow: "hidden",
-    height: 250,
-    backgroundColor: theme.palette.background.paper
-  },
-  subheader: {
-    width: "100%"
-  }
+  root: theme.mixins.gutters({
+    paddingTop: 20,
+    flex: "1 1 100%",
+    maxWidth: "100%",
+    margin: "0 auto"
+  })
 });
 
 function View1(props) {
-  const { classes, viewName } = props;
-  const input = '# This is a header\n\nAnd this is a paragraph\n\nUsing [react-markdown](https://github.com/rexxars/react-markdown)'
+  const { classes, viewName, markdown } = props;
 
   return (
     <div>
       <ViewName viewName={viewName} />
       <div className={classes.root}>
-        <ReactMarkdown source={input} />
+        <ReactMarkdown source={markdown} />
       </div>
     </div>
   );
 }
 
 View1.propTypes = {
-  viewName: PropTypes.string.isRequired
+  viewName: PropTypes.string.isRequired,
+  markdown: PropTypes.string.isRequired
 };
 
 export default withStyles(styles)(View1);

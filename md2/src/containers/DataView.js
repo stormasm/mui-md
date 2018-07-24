@@ -9,14 +9,14 @@ function DataView(props) {
   const { viewName, markdown } = props;
 
   if (viewName === "view1") {
-    return <View1 viewName={viewName} />;
+    return <View1 viewName={viewName} markdown={markdown} />;
   }
 
   if (viewName === "view2") {
     return <View2 viewName={viewName} markdown={markdown} />;
   }
 
-  return <View3 viewName={viewName} />;
+  return <View3 viewName={viewName} markdown={markdown} />;
 }
 
 DataView.propTypes = {
