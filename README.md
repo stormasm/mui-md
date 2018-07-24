@@ -10,7 +10,14 @@ The actual data is simply located in a **const**.
 
 This repo uses two different ways of generating Markdown..
 
-It uses
+#### View 1
+
+Uses
+[React-Markdown](https://github.com/rexxars/react-markdown)
+
+#### View 2 and View 3
+
+Use
 [MarkdownElement](https://github.com/mui-org/material-ui/tree/master/packages/material-ui-docs/src/MarkdownElement)
 which
 [MarkdownDocs](https://github.com/mui-org/material-ui/blob/master/docs/src/modules/components/MarkdownDocs.js)
