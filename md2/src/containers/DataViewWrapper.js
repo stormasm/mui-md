@@ -24,7 +24,6 @@ class DataViewWrapper extends React.Component {
     this.setState({ viewName: nextProps.view });
 
     const url = template + nextProps.view + ".md";
-    console.log("1", url);
 
     fetch(url)
       .then(response => {
@@ -45,7 +44,6 @@ class DataViewWrapper extends React.Component {
     this.setState({ viewName: this.props.view });
 
     const url = template + this.state.viewName + ".md";
-    console.log("2", url);
 
     fetch(url)
       .then(response => {
@@ -62,16 +60,8 @@ class DataViewWrapper extends React.Component {
   }
 
   render() {
-
     const mydata = this.state.data;
-    const mytype = typeof mydata
-
-    console.log('hhhhhhhh');
-    console.log(mytype);
-
-    if(mytype === 'string') {
-      console.log(mydata);
-    }
+    const mytype = typeof mydata;
 
     if (this.state.error) {
       return <p>{this.state.error.message}</p>;
@@ -81,20 +71,14 @@ class DataViewWrapper extends React.Component {
       return <p>Loading ...</p>;
     }
 
-    if (mytype === 'string') {
-    return (
-      <div>
-        <DataView
-          viewName={this.state.viewName}
-          markdown={mydata}
-        />
-      </div>
-    );
-    }
-    else {
+    if (mytype === "string") {
       return (
-        'No data yet...'
-      )
+        <div>
+          <DataView viewName={this.state.viewName} markdown={mydata} />
+        </div>
+      );
+    } else {
+      return "No data yet...";
     }
   }
 }
