@@ -20,12 +20,11 @@ class DataViewWrapper extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-
     this.setState({ isLoading: true });
     this.setState({ viewName: nextProps.view });
 
-    const url = template + nextProps.view + '.md';
-    console.log('1', url);
+    const url = template + nextProps.view + ".md";
+    console.log("1", url);
 
     fetch(url)
       .then(response => {
@@ -45,8 +44,8 @@ class DataViewWrapper extends React.Component {
     this.setState({ isLoading: true });
     this.setState({ viewName: this.props.view });
 
-    const url = template + this.state.viewName + '.md';
-    console.log('2', url);
+    const url = template + this.state.viewName + ".md";
+    console.log("2", url);
 
     fetch(url)
       .then(response => {
@@ -63,7 +62,6 @@ class DataViewWrapper extends React.Component {
   }
 
   render() {
-
     console.log(this.state.data);
 
     if (this.state.error) {
@@ -76,7 +74,10 @@ class DataViewWrapper extends React.Component {
 
     return (
       <div>
-        <DataView viewName={this.state.viewName} markdown={'cool'}/>
+        <DataView
+          viewName={this.state.viewName}
+          markdown={"#### cool, now get the real data"}
+        />
       </div>
     );
   }
