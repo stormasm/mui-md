@@ -1,6 +1,6 @@
 {
-  "name": "mui-view",
-  "description": "Starter for mui view infrastructure",
+  "name": "mui-md",
+  "description": "Starter for mui markdown infrastructure",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
